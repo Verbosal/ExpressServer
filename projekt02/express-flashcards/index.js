@@ -14,6 +14,11 @@ app.set("view engine", "ejs");
 
 app.use(express.static("public"));
 
+app.get("/index.html", (req, res) => {
+  console.log(req);
+  console.log(res);
+});
+
 app.get("/cards/categories/", (req, res) => {
   res.render("categories", {
     title: "Kategorie",
