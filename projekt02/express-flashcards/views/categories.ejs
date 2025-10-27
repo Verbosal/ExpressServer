@@ -2,7 +2,15 @@
 
 <main>
   <h1><%= title %></h1>
-  <h1>This URL accepts the POST method, feel free to try and make a request!</h1>
+
+  <h2>This URL accepts the POST method, feel free to try and make a request!</h2>
+
+  <% if (locals.parameters) { %>
+    <% parameters.forEach(function (text) { %>
+        <h5><%= text %></h5>
+    <% }) %>
+  <% } %>
+
   <ul id="categories">
     <% categories.forEach(function(category){ %>
     <li><%= category %></li>
