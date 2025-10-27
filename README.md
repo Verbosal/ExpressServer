@@ -12,5 +12,6 @@ index.html and /cards/categories both can receive GET, but only /cards/categorie
 - /cards/categories and GET<br>
 - /cards/categories and POST<br>
 <br><br>
+The web app is a modular EJS application, configurable using index.js<br><br> 
 The contents are in Polish.<br><br>
 Have fun
