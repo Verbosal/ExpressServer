@@ -20,10 +20,10 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 function renderCategories(req, res, parameters) {
-  // Render categories
+  // Render /cards/categories
   res.locals.title = "Kategorie";
   res.locals.categories = card_categories;
-  res.locals.parameters = parameters;
+  res.locals.parameters = parameters; // Gets set to undefined if using the GET method (or there aren't any POST parameters); doesn't matter, as there's a check in the code in the ejs file.
 
   res.render("categories");
 }

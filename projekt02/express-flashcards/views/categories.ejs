@@ -3,19 +3,7 @@
 <main>
   <h1><%= title %></h1>
 
-  <h2>This URL accepts the POST method, feel free to try and make a request!</h2>
-
-  <% if (parameters) { %>
-    <ul>
-      <h2>Found POST parameters! Here they are:</h2>
-
-    <% const params = parameters %>
-    <%  for (const key in params) { %>
-      <li><%= key%> = <%= params[key]%></li>
-    <% } %>
-
-    </ul>
-  <% } %>
+  <%- include("../functions/POST.ejs") %>
 
   <ul id="categories">
     <% categories.forEach(function(category){ %>
