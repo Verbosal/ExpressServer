@@ -39,7 +39,7 @@ app.post("/cards/categories/",urlencodedParser, (req, res) => {
   renderCategories(req, res, req.body);
 });
 
-// Return 404 upon an improper path request
+// Return 404 upon an improper path and/or method request
 app.use(function(req, res) {
   res.status(404);
 
