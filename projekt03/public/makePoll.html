@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SuperAnkieter</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="../utils/addPoll.js"></script>
+    <script src="../utils/removePoll.js"></script>
 </head>
 
 <body>
@@ -19,14 +21,16 @@
             <input name="duration" type="text" class="duration" placeholder="1-24">
 
             
-            <fieldset>
+            <fieldset id="choiceField">
                 <legend>Pytanie</legend>
                 
                 <input type="radio" name="choice1">
-                <label for="choice1"><input name="choice" type="text" class="duration" placeholder="Odpowiedź"></label>
+                <label for="choice1"><input name="choice1" type="text" id="1" class="duration choice" placeholder="Odpowiedź"></label>
+
                 <br>
-                <input type="button" style="background-color: green;" value="Dodaj odpowiedź">
-                <input type="button" style="background-color: red;" value="Usuń ostatnią">
+
+                <input type="button" style="background-color: green;" value="Dodaj odpowiedź" onclick="addPoll(this)">
+                <input type="button" style="background-color: red;" value="Usuń ostatnią" onclick="removePoll(this)">
             </fieldset>
 
             <input type="checkbox" name="checkboxes">
