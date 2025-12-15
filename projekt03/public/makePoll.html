@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SuperAnkieter</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="../utils/addPoll.js"></script>
-    <script src="../utils/removePoll.js"></script>
+    <script src="../utils/makePoll.js"></script>
 </head>
 
-<body>
+<body onload="loaded()">
     <h1>Forum do stworzenia własnej ankiety</h1>
 
     <form action="./index.html">
@@ -18,23 +17,25 @@
 
         <div class="poll">
             <label for="duration">Ile ma trwać? (w godzinach)</label>
-            <input name="duration" type="text" class="duration" placeholder="1-24">
+            <input name="duration" type="number" class="duration" placeholder="1-24" pattern="\d{1,2}" required>
 
             
             <fieldset id="choiceField">
                 <legend>Pytanie</legend>
                 
-                <input type="radio" name="choice1">
-                <label for="choice1"><input name="choice1" type="text" id="1" class="duration choice" placeholder="Odpowiedź"></label>
+                <section id="1">
+                    <input type="radio" name="choice1">
+                    <label for="choice"><input name="choice" type="text" class="duration choice" placeholder="Odpowiedź"></label>
+                </section>
 
                 <br>
-
-                <input type="button" style="background-color: green;" value="Dodaj odpowiedź" onclick="addPoll(this)">
-                <input type="button" style="background-color: red;" value="Usuń ostatnią" onclick="removePoll(this)">
             </fieldset>
 
+            <input type="button" style="background-color: green;" value="Dodaj odpowiedź" onclick="addPoll(this)">
+            <input type="button" style="background-color: red;" value="Usuń ostatnią" onclick="removePoll(this)">
+            <br>
             <input type="checkbox" name="checkboxes">
-            <label for="checkbox" class="multiAnswer">Wielokrotnej odpowiedzi?</label>
+            <label for="checkbox" class="multiAnswer" onclick="changeFormat()">Wielokrotnej odpowiedzi?</label>
         </div>
 
         <input type="submit" value="Stwórz">
